@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lustre Stripe Plotter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <p class="eyebrow">Lustre layout visualizer</p>
+      <h1>Stripe Plotter</h1>
+      <p class="subtitle">Upload YAML from <code>lfs getstripe -y</code> and inspect layout components instantly in the browser.</p>
+    </header>
+
+    <section class="panel controls">
+      <div class="input-row">
+        <label for="yamlFile" class="btn ghost">Open YAML file</label>
+        <input id="yamlFile" type="file" accept=".yaml,.yml,text/yaml">
+        <button id="renderBtn" class="btn solid">Render Layout</button>
+        <button id="sampleBtn" class="btn ghost">Load sample</button>
+        <button id="clearBtn" class="btn ghost">Clear</button>
+      </div>
+      <textarea id="yamlInput" placeholder="Paste YAML here..."></textarea>
+      <div id="status" class="status" aria-live="polite"></div>
+    </section>
+
+    <section class="panel output">
+      <div class="output-toolbar">
+        <h2>Layout view</h2>
+        <div class="output-actions">
+          <button id="downloadSvgBtn" class="btn ghost" disabled>Download SVG</button>
+          <button id="downloadPngBtn" class="btn ghost" disabled>Download PNG</button>
+        </div>
+      </div>
+      <div id="chartWrap" class="chart-wrap">
+        <svg id="chart" role="img" aria-label="Lustre file component layout"></svg>
+      </div>
+      <div id="summary" class="summary"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

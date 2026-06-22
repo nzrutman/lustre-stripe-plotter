@@ -1,0 +1,12 @@
+{
+  "name": "lustre-stripe-plotter",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Browser and Python visualization for Lustre stripe layouts",
+  "scripts": {
+    "smoke-test": "node smoke-test.mjs"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
