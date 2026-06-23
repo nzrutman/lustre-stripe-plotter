@@ -53,40 +53,6 @@ The browser app is a static frontend:
 
 It runs entirely client-side using `js-yaml` from a CDN. No backend required.
 
-### Smoke Test
-
-Run the JavaScript smoke test against all YAML files in `examples/`:
-
-`npm install && npm run smoke-test`
-
-This validates YAML loading, normalization, component parsing, and extent computation.
-
-### Local Preview
-
-You can open `index.html` directly, but using a local server gives better compatibility.
-
-Example:
-
-`python3 -m http.server 8000`
-
-Then browse to:
-
-`http://localhost:8000`
-
-### Cloudflare Pages Deployment
-
-1. Push this repo to GitHub.
-1. In Cloudflare Pages, create a new project from this repo.
-1. Use these settings:
-
-- Framework preset: `None`
-- Build command: *(leave blank)*
-- Build output directory: `/`
-
-1. Deploy.
-
-No server-side runtime is needed for the browser app.
-
 ## Known Issues
 
 - The size of the first object after a DoM component shoud be drawn smaller by \<DoM size\>. I didn't bother to fix this.
